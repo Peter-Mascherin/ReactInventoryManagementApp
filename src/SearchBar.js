@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+//the SearchBar component, the first base feature of our app
+//By Peter Mascherin
 function SeachBar(props) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
