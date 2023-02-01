@@ -1,21 +1,30 @@
 import "./App.css";
 import SeachBar from "./SearchBar";
 import { useState } from "react";
+import AddItem from "./AddItem";
+import ItemsDisplay from "./ItemsDisplay";
 
 function App() {
-  const [data, setData] = useState({});
-  const updateData = (searchParams) => {
-    setData(searchParams);
+  const [filter, setFilters] = useState({});
+  const [data, setData] = useState({ items: [] });
+
+  const updateFilters = (searchParams) => {
+    setFilters(searchParams);
   };
+
+  const addItemToData = (item) => {
+    let items = data["items"];
+    item.id = items.length;
+    items.push(item);
+    setData({ items: items });
+    console.log(data);
+  };
+
   return (
     <div className="App">
-      <SeachBar callback={updateData}></SeachBar>
-      <p>Name: {"name" in data ? data["name"] : "No name to display"}</p>
-      <p>
-        Max Price: {"price" in data ? data["price"] : "No price to display"}
-      </p>
-      <p>Type: {"type" in data ? data["type"] : "No type to display"}</p>
-      <p>Brand: {"brand" in data ? data["brand"] : "No brand to display"}</p>
+      <SeachBar updateSearchParams={updateFilters}></SeachBar>
+      <ItemsDisplay items={data["items"]} />
+      <AddItem addItem={addItemToData} />
     </div>
   );
 }
