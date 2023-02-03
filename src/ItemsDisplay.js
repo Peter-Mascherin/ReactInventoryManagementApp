@@ -1,17 +1,35 @@
 function ItemsDisplay(props) {
   return (
-    <div>
-      {props.items.map((item) => {
-        return (
-          <div key={item.id}>
-            <p>Id: {item.id}</p>
-            <p>Name: {item.name}</p>
-            <p>Price: {item.price}</p>
-            <p>Brand: {item.brand}</p>
-            <p>Type: {item.type}</p>
-          </div>
-        );
-      })}
+    <div className="container">
+      <div className="row">
+        <h2>Items</h2>
+      </div>
+      <div className="row">
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Brand</th>
+              <th scope="col">Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {props.items.map((item) => {
+              return (
+                <tr key={item.id}>
+                  <th scope="row">{item.id}</th>
+                  <td>{item.name}</td>
+                  <td>{item.price}</td>
+                  <td>{item.brand}</td>
+                  <td>{item.type}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
