@@ -20,8 +20,38 @@ function App() {
     console.log(data);
   };
 
+  const filterData = (data) => {
+    const fData = [];
+
+    if (!filter.name && !filter.price && !filter.brand && !filter.type) {
+      return data;
+    }
+
+    for (const item of data) {
+      if (filter.name !== "" && item.name !== filter.name) {
+        continue;
+      }
+
+      if (filter.price !== 0 && item.price !== filter.price) {
+        continue;
+      }
+
+      if (filter.brand !== "" && item.brand !== filter.brand) {
+        continue;
+      }
+
+      if (filter.type !== "" && item.type !== filter.type) {
+        continue;
+      }
+
+      fData.push(item);
+    }
+
+    return fData;
+  };
+
   return (
-    <div className="container">
+    <div className="container bg-dark text-white">
       <div className="row mt-3">
         <AddItem addItem={addItemToData} />
       </div>
@@ -29,7 +59,7 @@ function App() {
         <SeachBar updateSearchParams={updateFilters}></SeachBar>
       </div>
       <div className="row mt-3">
-        <ItemsDisplay items={data["items"]} />
+        <ItemsDisplay items={filterData(data["items"])} />
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ function AddItem(props) {
   };
   return (
     <div className="container">
-      <div className="row ">
+      <div className="row">
         <h2>Add a new Item</h2>
       </div>
 

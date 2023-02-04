@@ -1,3 +1,5 @@
+import "./ItemsDisplay.css";
+
 function ItemsDisplay(props) {
   return (
     <div className="container">
@@ -5,8 +7,8 @@ function ItemsDisplay(props) {
         <h2>Items</h2>
       </div>
       <div className="row">
-        <table className="table table-striped">
-          <thead>
+        <table className="table text-white">
+          <thead className="bg-danger">
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Name</th>
