@@ -8,7 +8,7 @@ function ItemsDisplay(props) {
       </div>
       <div className="row">
         <table className="table text-white">
-          <thead className="bg-danger">
+          <thead className="tablehead">
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Name</th>
@@ -20,7 +20,7 @@ function ItemsDisplay(props) {
           <tbody>
             {props.items.map((item) => {
               return (
-                <tr key={item.id}>
+                <tr key={item.id} className="tablerow">
                   <th scope="row">{item.id}</th>
                   <td>{item.name}</td>
                   <td>{item.price}</td>
