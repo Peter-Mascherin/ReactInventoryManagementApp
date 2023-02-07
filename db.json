@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "name": "firstitem",
+      "price": "10",
+      "type": "gg",
+      "brand": "xds",
+      "id": 1
+    },
+    {
+      "name": "th",
+      "price": "2",
+      "type": "dd",
+      "brand": "qq",
+      "id": 2
+    },
+    {
+      "name": "dddd",
+      "price": "2",
+      "type": "ghhg",
+      "brand": "aa",
+      "id": 3
+    }
+  ]
+}
