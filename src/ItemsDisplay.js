@@ -8,16 +8,17 @@ function ItemsDisplay(props) {
       </div>
       <div className="row">
         <table className="table text-white">
-          <thead className="tablehead">
+          <thead className="tablehead" align="center">
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Name</th>
               <th scope="col">Price</th>
               <th scope="col">Brand</th>
               <th scope="col">Type</th>
+              <th scope="col">Delete</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody align="center">
             {props.items.map((item) => {
               return (
                 <tr key={item.id} className="tablerow">
@@ -26,6 +27,14 @@ function ItemsDisplay(props) {
                   <td>{item.price}</td>
                   <td>{item.brand}</td>
                   <td>{item.type}</td>
+                  <td>
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => props.deleteItem(item)}
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               );
             })}
